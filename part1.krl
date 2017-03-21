@@ -6,13 +6,13 @@ ruleset echo {
 		logging on
 	}
 
-	run hello {
+	rule hello {
 		select when echo hello
 		send_directive("say") with
 		something = "Hello World"
 	}
 
-	run message {
+	rule message {
 		select when echo message
 		pre {
 			input = event:attr("input")
