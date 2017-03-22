@@ -5,7 +5,8 @@ ruleset trip_store{
                 author "Michael K."
                 logging on
 		shares get_trips, get_long_trips, get_short_trips
-        }
+		provides get_trips, get_long_trips, get_short_trips        
+	}
         global{
                 trips = {}
                 long_trips = {}
@@ -17,7 +18,9 @@ ruleset trip_store{
 			ent:long_trips
 		}
 		get_short_trips = function(){
-			ent:longtrip.difference(ent:trips)
+			ent:trips.filter(function(tip){
+				(trip.mileage > 100)
+			})
 		}
 
         }
