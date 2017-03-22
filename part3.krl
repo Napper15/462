@@ -4,6 +4,7 @@ ruleset trip_store{
                 description << Part 3 Pico Trip Store >>
                 author "Michael K."
                 logging on
+		shares get_trips, get_long_trips, get_short_trips
         }
         global{
                 trips = {}
